@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import Header from './components/Header';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <h1>КН 22 вивчає React</h1>
-      <div className="card">
+      <Header />
+      <div>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
