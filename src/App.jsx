@@ -1,5 +1,5 @@
 import Header from './components/organisms/Header';
-import Button from './components/atoms/Button';
+import Card from './components/moleculas/Card';
 
 function App() {
   const handleClick = () => {
@@ -9,12 +9,13 @@ function App() {
   return (
     <>
       <Header />
-      <div>
-        <Button
-          text="Click me"
-          onClick={() => console.log('Button clicked')}
-        />
-      </div>
+      <Card
+        title="Card"
+        level={2}
+        buttonLabel="Submit"
+        buttonVariant="secondary"
+        buttonOnClick={handleClick}
+      />
     </>
   );
 }
