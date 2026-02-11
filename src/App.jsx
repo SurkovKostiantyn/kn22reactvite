@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import Header from './components/Header';
+import Header from './components/organisms/Header';
+import Button from './components/atoms/Button';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    console.log("Button clicked");
+  };
 
   return (
     <>
       <Header />
       <div>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <Button
+          text="Click me"
+          onClick={() => console.log('Button clicked')}
+        />
       </div>
     </>
   );
