@@ -33,23 +33,7 @@ function App() {
     <>
       <Header />
 
-      <div style={{ padding: '20px' }}>
-        <h2>Posts List</h2>
-        {/* Крок 3: Рендеринг списку компонентів за допомогою .map() */}
-        {mockPosts.map((post) => (
-          <Post
-            // Крок 4: Забезпечення унікальності ключів (key)
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            content={post.content}
-            author={post.author}
-          />
-        ))}
-      </div>
-
-      <hr />
-      <h3>Legacy Card</h3>
+      <h2>Lab1: Card</h2>
       <Card
         title="Card"
         level={2}
@@ -57,6 +41,19 @@ function App() {
         buttonVariant="secondary"
         buttonOnClick={handleClick}
       />
+
+      <h2>Lab2: Posts List</h2>
+      {/* Крок 3: Рендеринг списку компонентів за допомогою .map() */}
+      {mockPosts.map((post) => (
+        <Post
+          // Крок 4: Забезпечення унікальності ключів (key)
+          key={post.id}
+          id={post.id}
+          title={post.title}
+          content={post.content}
+          author={post.author}
+        />
+      ))}
     </>
   );
 }
