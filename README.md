@@ -1,4 +1,4 @@
-# KN22 React Vite Project
+# Розробка веб-додатків на React
 
 ## Google Classroom
 [https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf](https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf)
