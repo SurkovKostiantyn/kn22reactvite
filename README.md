@@ -7,7 +7,6 @@
 - [Lab 1 Report](./lab1.md)
 - [Lab 2 Report](./lab2.md)
 
-## Інструкції
-- [Папка з інструкціями](./instructions)
+## [Папка з інструкціями](./instructions)
 - [Налаштування GitHub Actions](./instructions/ghactions.md)
 - [Робота з Git](./instructions/git.md)
