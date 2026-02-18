@@ -1,26 +1,26 @@
 .post {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .content {
-    margin-bottom: 12px;
-    color: #333;
-    font-family: sans-serif;
+  margin-bottom: 12px;
+  color: #333;
+  font-family: sans-serif;
 }
 
 .author {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 12px;
-    font-style: italic;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 12px;
+  font-style: italic;
 }
 
 .actions {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
