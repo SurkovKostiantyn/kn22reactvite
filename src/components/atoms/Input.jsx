@@ -1,8 +1,19 @@
-function Input({ type, placeholder, label }) {
+import styles from './Input.module.css';
+
+function Input(props) {
+  const { type, placeholder, label, id, name, value, onChange } = props;
+
   return (
     <label>
       {label}
-      <input type={type} placeholder={placeholder} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        id={id}
+        name={name}
+      />
     </label>
   );
 }

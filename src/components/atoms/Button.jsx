@@ -1,6 +1,8 @@
 ﻿import styles from './Button.module.css';
 
-function Button({ children, onClick, variant = 'primary' }) {
+function Button(props) {
+  const { children, onClick, variant = 'primary' } = props;
+
   return (
     <button
       type="button"

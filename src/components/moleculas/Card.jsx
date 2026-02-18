@@ -3,14 +3,9 @@ import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 import styles from './Card.module.css';
 
-function Card({
-  title,
-  children,
-  buttonLabel,
-  buttonVariant,
-  buttonOnClick,
-  level,
-}) {
+function Card(props) {
+  const { title, children, buttonLabel, buttonVariant, buttonOnClick, level } =
+    props;
   return (
     <div className={styles.card}>
       <Heading level={level} title={title} />

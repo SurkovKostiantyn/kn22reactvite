@@ -1,9 +1,13 @@
-const ListItem = ({ student }) => {
-    return (
-        <li>
-            {student.name} - {student.score}
-        </li>
-    );
-};
+function ListItem(props) {
+  const {
+    student: { name, score },
+  } = props;
+
+  return (
+    <li>
+      {name} - {score}
+    </li>
+  );
+}
 
 export default ListItem;

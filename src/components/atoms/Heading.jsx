@@ -1,4 +1,6 @@
-function Heading({ level, title }) {
+function Heading(props) {
+  const { level, title } = props;
+
   const Tag = `h${level}`;
   return <Tag>{title}</Tag>;
 }
