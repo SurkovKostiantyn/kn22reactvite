@@ -13,3 +13,4 @@
 
 - [Налаштування GitHub Actions](./instructions/ghactions.md)
 - [Робота з Git](./instructions/git.md)
+- [Перехід з npm на Yarn](./instructions/npm-to-yarn.md)
