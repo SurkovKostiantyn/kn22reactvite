@@ -1,6 +1,10 @@
 import Header from './components/organisms/Header';
 import Card from './components/moleculas/Card';
 import Post from './components/moleculas/Post';
+import Heading from './components/atoms/Heading';
+import List from './components/moleculas/List';
+import ListFiltered from './components/moleculas/ListFiltered';
+import AverageScore from './components/moleculas/AverageScore';
 
 // Крок 1: Створення масиву "мок-даних"
 const mockPosts = [
@@ -36,7 +40,14 @@ function App() {
     <>
       <Header />
 
-      <h2>Lab1: Card</h2>
+      <Heading level={2} title="Pz2: List" />
+      <List />
+      <Heading level={2} title="Pz2: ListFiltered" />
+      <ListFiltered />
+      <Heading level={2} title="Pz2: AverageScore" />
+      <AverageScore />
+
+      <Heading level={2} title="Lab1: Card" />
       <Card
         title="Card"
         level={2}
@@ -45,7 +56,7 @@ function App() {
         buttonOnClick={handleClick}
       />
 
-      <h2>Lab2: Posts List</h2>
+      <Heading level={2} title="Posts List" />
       {/* Крок 3: Рендеринг списку компонентів за допомогою .map() */}
       {mockPosts.map((post) => (
         <Post
