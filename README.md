@@ -10,6 +10,12 @@
 - [Lab 2 Report](./LABS/lab2.md)
 - [Lab 3 Report](./LABS/lab3.md)
 
+## Практичні роботи
+
+- [Practice 1 Report](./PRACTICE/practice1.md)
+- [Practice 2 Report](./PRACTICE/practice2.md)
+- [Practice 3 Report](./PRACTICE/practice3.md)
+
 ## [Папка з інструкціями](./instructions)
 
 - [Налаштування GitHub Actions](./instructions/ghactions.md)
