@@ -1,4 +1,4 @@
-import { students } from './data.js';
+import { students } from '../../DATA/data.js';
 import ListItem from '../atoms/ListItem.jsx';
 
 function List() {

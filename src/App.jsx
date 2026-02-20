@@ -13,7 +13,7 @@ import StudentList from './components/moleculas/StudentList';
 import StatisticsData from './components/moleculas/StatisticsData';
 import AboutAuthor from './components/moleculas/AboutAuthor';
 
-// Крок 1: Створення масиву "мок-даних"
+// Pz2: Крок 1: Створення масиву "мок-даних"
 const mockPosts = [
   {
     id: 1,
@@ -55,7 +55,7 @@ function App() {
     console.log('Button clicked');
   };
 
-  // Логіка фільтрації
+  // Pz2: Логіка фільтрації
   const filteredPosts = mockPosts.filter((post) => {
     const matchesSearch =
       post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -66,7 +66,7 @@ function App() {
     return matchesSearch && matchesCategory;
   });
 
-  // Визначення табів
+  // Pz3: Визначення табів
   const tabs = [
     { id: 'list', label: 'Всі студенти' },
     { id: 'stats', label: 'Статистика' },

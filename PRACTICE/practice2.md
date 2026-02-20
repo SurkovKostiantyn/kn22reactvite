@@ -10,7 +10,7 @@
 
 ## 1. Підготовка даних (Mock Data)
 
-Створено файл `src/components/moleculas/data.js` зі статичним масивом студентів:
+Створено файл `src/DATA/data.js` зі статичним масивом студентів:
 
 ```js
 export const students = [
@@ -34,7 +34,7 @@ export const students = [
 Для відображення повного списку студентів створено компонент `List.jsx`:
 
 ```jsx
-import { students } from './data.js';
+import { students } from '../../DATA/data.js';
 import ListItem from '../atoms/ListItem.jsx';
 
 function List() {
@@ -88,7 +88,7 @@ import List from './components/moleculas/List';
 Для виведення студентів з балом >= 60 створено компонент `ListFiltered.jsx`:
 
 ```jsx
-import { students } from './data.js';
+import { students } from '../../DATA/data.js';
 import ListItem from '../atoms/ListItem.jsx';
 
 function ListFiltered() {
@@ -107,6 +107,7 @@ export default ListFiltered;
 ```
 
 Застосовано ланцюжок `.filter().map()`:
+
 1. `.filter()` — відсіює студентів з балом менше 60 (Дмитро Кравченко — 45 балів не потрапляє до списку).
 2. `.map()` — перетворює відфільтрований масив у JSX-елементи.
 
@@ -126,7 +127,7 @@ import ListFiltered from './components/moleculas/ListFiltered';
 Для обчислення середнього балу створено компонент `AverageScore.jsx`:
 
 ```jsx
-import { students } from './data.js';
+import { students } from '../../DATA/data.js';
 import Paragraph from '../atoms/Paragraph.jsx';
 
 function AverageScore() {
@@ -140,6 +141,7 @@ export default AverageScore;
 ```
 
 Логіка обчислення:
+
 - `.reduce()` підсумовує всі бали, починаючи з акумулятора `0`.
 - Результат ділиться на кількість студентів (`students.length`).
 - Для масиву `[95, 88, 92, 75, 85, 100, 60, 45]` середній бал = **(95+88+92+75+85+100+60+45) / 8 = 80**.
@@ -170,7 +172,7 @@ fd8087e fix Post.jsx add id (key)
 
 ```bash
 git checkout -b pz2/data-transformations    # створення гілки
-# ... створення data.js, List.jsx, ListFiltered.jsx, AverageScore.jsx ...
+# ... створення DATA/data.js, List.jsx, ListFiltered.jsx, AverageScore.jsx ...
 git add .
 git commit -m "feat: add data transformations (map, filter, reduce)"
 git checkout master
@@ -187,7 +189,8 @@ src/components/
 ├── atoms/
 │   └── ListItem.jsx         — атомарний компонент для одного рядка списку
 └── moleculas/
-    ├── data.js              — масив mock-даних (студенти)
+├── DATA/
+│   └── data.js                — масив mock-даних (студенти)
     ├── List.jsx             — повний список студентів (.map)
     ├── ListFiltered.jsx     — відфільтрований список (.filter + .map)
     └── AverageScore.jsx     — середній бал (.reduce)
@@ -199,7 +202,7 @@ src/components/
 
 **1. Чому при рендерингу масивів у React обов'язково використовувати атрибут key?**
 
-Атрибут `key` допомагає React ідентифікувати, які елементи змінилися, були додані або видалені. Без `key` React не зможе ефективно оновлювати DOM, що призведе до зниження продуктивності та можливих помилок у відображенні стану компонентів. У консолі з'явиться попередження: *"Each child in a list should have a unique 'key' prop."*
+Атрибут `key` допомагає React ідентифікувати, які елементи змінилися, були додані або видалені. Без `key` React не зможе ефективно оновлювати DOM, що призведе до зниження продуктивності та можливих помилок у відображенні стану компонентів. У консолі з'явиться попередження: _"Each child in a list should have a unique 'key' prop."_
 
 **2. У чому різниця між .map() та .forEach()?**
 

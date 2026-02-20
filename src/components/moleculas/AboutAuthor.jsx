@@ -1,15 +1,19 @@
 function AboutAuthor() {
-    return (
-        <div>
-            <h3>Про автора</h3>
-            <p>
-                Цей додаток розроблено в рамках курсу &quot;React&quot; для групи КН-22.
-            </p>
-            <p>
-                Використані технології: React 19, Vite 8, ESLint, Prettier.
-            </p>
-        </div>
-    );
+  return (
+    <div>
+      <Heading level={3} title="Про автора" />
+      <Paragraph
+        text={
+          'Цей додаток розроблено в рамках курсу "React" для групи КН-22.'
+        }
+      />
+      <Paragraph
+        text={
+          'Використані технології: React 19, Vite 8, ESLint, Prettier.'
+        }
+      />
+    </div>
+  );
 }
 
 export default AboutAuthor;

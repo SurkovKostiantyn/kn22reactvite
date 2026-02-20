@@ -31,10 +31,10 @@ const [showHelp, setShowHelp] = useState(false);
 ```jsx
 <Button onClick={() => setShowHelp(!showHelp)}>
   {showHelp ? 'Приховати інструкцію' : 'Показати інструкцію'}
-</Button>
-{showHelp && (
-  <p>Довідка: Цей додаток дозволяє керувати списками студентів.</p>
-)}
+</Button>;
+{
+  showHelp && <p>Довідка: Цей додаток дозволяє керувати списками студентів.</p>;
+}
 ```
 
 **Принцип роботи:** Якщо `showHelp === true`, React відрендерить праву частину виразу (елемент `<p>`). Якщо `showHelp === false`, весь вираз повертає `false`, і React нічого не виводить.
@@ -94,19 +94,21 @@ const tabs = [
 ### Навігаційна панель з динамічними стилями
 
 ```jsx
-{tabs.map((tab) => (
-  <button
-    key={tab.id}
-    onClick={() => setActiveTab(tab.id)}
-    className={activeTab === tab.id ? 'active-tab' : ''}
-    style={{
-      backgroundColor: activeTab === tab.id ? '#007bff' : '#6c757d',
-      fontWeight: activeTab === tab.id ? 'bold' : 'normal',
-    }}
-  >
-    {tab.label}
-  </button>
-))}
+{
+  tabs.map((tab) => (
+    <button
+      key={tab.id}
+      onClick={() => setActiveTab(tab.id)}
+      className={activeTab === tab.id ? 'active-tab' : ''}
+      style={{
+        backgroundColor: activeTab === tab.id ? '#007bff' : '#6c757d',
+        fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+      }}
+    >
+      {tab.label}
+    </button>
+  ));
+}
 ```
 
 Активна кнопка отримує CSS-клас `active-tab`, синій фон та жирний шрифт.
@@ -124,11 +126,13 @@ const tabs = [
 ### Компоненти табів
 
 **StudentList.jsx** — список студентів з фільтром:
+
 - Перемикач "Показати всіх" / "Показати тільки успішних"
 - Порожній стан: "За вашим запитом нікого не знайдено"
 - Захист від `null` через оператор `??`
 
 **StatisticsData.jsx** — агрегована статистика:
+
 - Всього студентів: 9
 - Успішних (≥60): 7
 - Середній бал: 71.1
@@ -145,15 +149,17 @@ const tabs = [
 У `StudentList.jsx` реалізовано перевірку:
 
 ```jsx
-{displayedStudents.length > 0 ? (
-  <ol>
-    {displayedStudents.map((student) => (
-      <ListItem key={student.id} student={student} />
-    ))}
-  </ol>
-) : (
-  <p>За вашим запитом нікого не знайдено.</p>
-)}
+{
+  displayedStudents.length > 0 ? (
+    <ol>
+      {displayedStudents.map((student) => (
+        <ListItem key={student.id} student={student} />
+      ))}
+    </ol>
+  ) : (
+    <p>За вашим запитом нікого не знайдено.</p>
+  );
+}
 ```
 
 ### 5.2. Динамічні класи
@@ -173,7 +179,7 @@ const displayScore = score ?? 'Оцінка відсутня';
 const hasScore = score != null;
 ```
 
-Для демонстрації додано студента без оцінки у `data.js`:
+Для демонстрації додано студента без оцінки у `DATA/data.js`:
 
 ```js
 {
@@ -214,7 +220,8 @@ src/
 │   ├── atoms/
 │   │   └── ListItem.jsx                     — [ЗМІНЕНО] ??, кольоровий статус
 │   └── moleculas/
-│       ├── data.js                          — [ЗМІНЕНО] додано студента без score
+│   ├── DATA/
+│   │   └── data.js                          — [ЗМІНЕНО] додано студента без score
 │       ├── StudentList.jsx                  — [НОВИЙ] список з фільтром + empty state
 │       ├── StatisticsData.jsx               — [НОВИЙ] статистика (reduce)
 │       └── AboutAuthor.jsx                  — [НОВИЙ] інформація про автора
@@ -235,6 +242,7 @@ JSX — це синтаксичний цукор для `React.createElement()`.
 **3. Як реалізувати умовний рендеринг при 5+ варіантах?**
 
 Використати об'єкт-маппінг або `switch` у окремій функції:
+
 ```jsx
 const tabContent = {
   list: <StudentList />,
