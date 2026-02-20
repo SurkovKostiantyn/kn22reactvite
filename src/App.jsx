@@ -9,6 +9,9 @@ import AverageScore from './components/moleculas/AverageScore';
 import SearchBar from './components/moleculas/SearchBar';
 import Paragraph from './components/atoms/Paragraph';
 import Button from './components/atoms/Button';
+import StudentList from './components/moleculas/StudentList';
+import StatisticsData from './components/moleculas/StatisticsData';
+import AboutAuthor from './components/moleculas/AboutAuthor';
 
 // Крок 1: Створення масиву "мок-даних"
 const mockPosts = [
@@ -42,6 +45,12 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
 
+  // Pz3: Крок 2 — стан для показу/приховання інструкції (оператор &&)
+  const [showHelp, setShowHelp] = useState(false);
+
+  // Pz3: Крок 4 — стан для табів
+  const [activeTab, setActiveTab] = useState('list');
+
   const handleClick = () => {
     console.log('Button clicked');
   };
@@ -57,10 +66,60 @@ function App() {
     return matchesSearch && matchesCategory;
   });
 
+  // Визначення табів
+  const tabs = [
+    { id: 'list', label: 'Всі студенти' },
+    { id: 'stats', label: 'Статистика' },
+    { id: 'about', label: 'Про автора' },
+  ];
+
   return (
     <>
       <Header />
 
+      {/* ===== Pz3: Крок 2 — Умовне відображення (оператор &&) ===== */}
+      <Heading level={2} title="Pz3: Умовне відображення (&&)" />
+      <Button onClick={() => setShowHelp(!showHelp)}>
+        {showHelp ? 'Приховати інструкцію' : 'Показати інструкцію'}
+      </Button>
+      {showHelp && (
+        <p>Довідка: Цей додаток дозволяє керувати списками студентів.</p>
+      )}
+
+      {/* ===== Pz3: Крок 3 — Тернарний оператор (Toggle) ===== */}
+      {/* Реалізовано всередині компонента StudentList */}
+
+      {/* ===== Pz3: Крок 4 — Інтерфейс з табами ===== */}
+      <Heading level={2} title="Pz3: Таби" />
+      <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={activeTab === tab.id ? 'active-tab' : ''}
+            style={{
+              padding: '10px 20px',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              backgroundColor: activeTab === tab.id ? '#007bff' : '#6c757d',
+              color: 'white',
+              fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+              transition: 'all 0.3s',
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <div className="content">
+        {activeTab === 'list' && <StudentList />}
+        {activeTab === 'stats' && <StatisticsData />}
+        {activeTab === 'about' && <AboutAuthor />}
+      </div>
+
+      {/* ===== Pz2 ===== */}
       <Heading level={2} title="Pz2: List" />
       <List />
       <Heading level={2} title="Pz2: ListFiltered" />
@@ -68,6 +127,7 @@ function App() {
       <Heading level={2} title="Pz2: AverageScore" />
       <AverageScore />
 
+      {/* ===== Lab1 ===== */}
       <Heading level={2} title="Lab1: Card" />
       <Card
         title="Card"
@@ -77,6 +137,7 @@ function App() {
         buttonOnClick={handleClick}
       />
 
+      {/* ===== Lab2 ===== */}
       <Heading level={2} title="Lab2: Posts List" />
       {/* Крок 3: Рендеринг списку компонентів за допомогою .map() */}
       {mockPosts.map((post) => (
@@ -90,6 +151,7 @@ function App() {
         />
       ))}
 
+      {/* ===== Lab3 ===== */}
       <Heading level={2} title="Lab3: SearchBar && Filter By Category" />
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <div>
