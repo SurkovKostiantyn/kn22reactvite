@@ -1,5 +1,9 @@
 # Розробка веб-додатків на React
 
+> Цей репозиторій є прикладом того, як має виглядати фінальний проєкт студента після завершення курсу з React.
+
+🌐 **Demo:** [https://surkovkostiantyn.github.io/kn22reactvite/](https://surkovkostiantyn.github.io/kn22reactvite/)
+
 ## Google Classroom
 
 [https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf](https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf)
