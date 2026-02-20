@@ -14,7 +14,7 @@
 - [Lab 2 Report](./LABS/lab2.md)
 - [Lab 3 Report](./LABS/lab3.md)
 
-## Практичні роботи
+## [Практичні роботи](./PRACTICE)
 
 - [Practice 1 Report](./PRACTICE/practice1.md)
 - [Practice 2 Report](./PRACTICE/practice2.md)
