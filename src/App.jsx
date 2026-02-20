@@ -78,99 +78,112 @@ function App() {
       <Header />
 
       {/* ===== Pz3: Крок 2 — Умовне відображення (оператор &&) ===== */}
-      <Heading level={2} title="Pz3: Умовне відображення (&&)" />
-      <Button onClick={() => setShowHelp(!showHelp)}>
-        {showHelp ? 'Приховати інструкцію' : 'Показати інструкцію'}
-      </Button>
-      {showHelp && (
-        <p>Довідка: Цей додаток дозволяє керувати списками студентів.</p>
-      )}
-
-      {/* ===== Pz3: Крок 3 — Тернарний оператор (Toggle) ===== */}
-      {/* Реалізовано всередині компонента StudentList */}
+      <section className="section">
+        <span className="section-label pz">Практична 3</span>
+        <Heading level={2} title="Умовне відображення (&&)" />
+        <Button onClick={() => setShowHelp(!showHelp)}>
+          {showHelp ? 'Приховати інструкцію' : 'Показати інструкцію'}
+        </Button>
+        {showHelp && (
+          <p className="help-text">
+            Довідка: Цей додаток дозволяє керувати списками студентів.
+          </p>
+        )}
+      </section>
 
       {/* ===== Pz3: Крок 4 — Інтерфейс з табами ===== */}
-      <Heading level={2} title="Pz3: Таби" />
-      <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={activeTab === tab.id ? 'active-tab' : ''}
-            style={{
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '16px',
-              backgroundColor: activeTab === tab.id ? '#007bff' : '#6c757d',
-              color: 'white',
-              fontWeight: activeTab === tab.id ? 'bold' : 'normal',
-              transition: 'all 0.3s',
-            }}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-      <div className="content">
-        {activeTab === 'list' && <StudentList />}
-        {activeTab === 'stats' && <StatisticsData />}
-        {activeTab === 'about' && <AboutAuthor />}
-      </div>
+      <section className="section">
+        <span className="section-label pz">Практична 3</span>
+        <Heading level={2} title="Таби" />
+        <div className="tab-bar">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`tab-btn ${activeTab === tab.id ? 'active-tab' : ''}`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className="content">
+          {activeTab === 'list' && <StudentList />}
+          {activeTab === 'stats' && <StatisticsData />}
+          {activeTab === 'about' && <AboutAuthor />}
+        </div>
+      </section>
 
-      {/* ===== Pz2 ===== */}
-      <Heading level={2} title="Pz2: List" />
-      <List />
-      <Heading level={2} title="Pz2: ListFiltered" />
-      <ListFiltered />
-      <Heading level={2} title="Pz2: AverageScore" />
-      <AverageScore />
+      {/* ===== Pz2: List ===== */}
+      <section className="section">
+        <span className="section-label pz">Практична 2</span>
+        <Heading level={2} title="List" />
+        <List />
+      </section>
 
-      {/* ===== Lab1 ===== */}
-      <Heading level={2} title="Lab1: Card" />
-      <Card
-        title="Card"
-        level={2}
-        buttonLabel="Submit"
-        buttonVariant="secondary"
-        buttonOnClick={handleClick}
-      />
+      {/* ===== Pz2: ListFiltered ===== */}
+      <section className="section">
+        <span className="section-label pz">Практична 2</span>
+        <Heading level={2} title="ListFiltered" />
+        <ListFiltered />
+      </section>
 
-      {/* ===== Lab2 ===== */}
-      <Heading level={2} title="Lab2: Posts List" />
-      {/* Крок 3: Рендеринг списку компонентів за допомогою .map() */}
-      {mockPosts.map((post) => (
-        <Post
-          // Крок 4: Забезпечення унікальності ключів (key)
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          content={post.content}
-          author={post.author}
+      {/* ===== Pz2: AverageScore ===== */}
+      <section className="section">
+        <span className="section-label pz">Практична 2</span>
+        <Heading level={2} title="AverageScore" />
+        <AverageScore />
+      </section>
+
+      {/* ===== Lab1: Card ===== */}
+      <section className="section">
+        <span className="section-label lab">Лабораторна 1</span>
+        <Heading level={2} title="Card" />
+        <Card
+          title="Card"
+          level={2}
+          buttonLabel="Submit"
+          buttonVariant="secondary"
+          buttonOnClick={handleClick}
         />
-      ))}
+      </section>
 
-      {/* ===== Lab3 ===== */}
-      <Heading level={2} title="Lab3: SearchBar && Filter By Category" />
-      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-      <div>
-        {['All', 'React', 'Not React'].map((cat) => (
-          <Button
-            key={cat}
-            children={cat}
-            onClick={() => setActiveCategory(cat)}
+      {/* ===== Lab2: Posts List ===== */}
+      <section className="section">
+        <span className="section-label lab">Лабораторна 2</span>
+        <Heading level={2} title="Posts List" />
+        {mockPosts.map((post) => (
+          <Post
+            key={post.id}
+            id={post.id}
+            title={post.title}
+            content={post.content}
+            author={post.author}
           />
         ))}
-      </div>
+      </section>
 
-      <div>
-        {filteredPosts.length > 0 ? (
-          filteredPosts.map((post) => <Post key={post.id} {...post} />)
-        ) : (
-          <Paragraph text="Нічого не знайдено за вашим запитом." />
-        )}
-      </div>
+      {/* ===== Lab3: SearchBar && Filter By Category ===== */}
+      <section className="section">
+        <span className="section-label lab">Лабораторна 3</span>
+        <Heading level={2} title="SearchBar && Filter By Category" />
+        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+        <div style={{ display: 'flex', gap: '8px', margin: '12px 0' }}>
+          {['All', 'React', 'Not React'].map((cat) => (
+            <Button
+              key={cat}
+              children={cat}
+              onClick={() => setActiveCategory(cat)}
+            />
+          ))}
+        </div>
+        <div>
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((post) => <Post key={post.id} {...post} />)
+          ) : (
+            <Paragraph text="Нічого не знайдено за вашим запитом." />
+          )}
+        </div>
+      </section>
     </>
   );
 }
