@@ -6,8 +6,9 @@
 
 ## Лабораторні роботи
 
-- [Lab 1 Report](./lab1.md)
-- [Lab 2 Report](./lab2.md)
+- [Lab 1 Report](./LABS/lab1.md)
+- [Lab 2 Report](./LABS/lab2.md)
+- [Lab 3 Report](./LABS/lab3.md)
 
 ## [Папка з інструкціями](./instructions)
 
