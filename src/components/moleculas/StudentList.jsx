@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { students } from '../../DATA/data.js';
 import ListItem from '../atoms/ListItem.jsx';
 import Button from '../atoms/Button.jsx';
+import Paragraph from '../atoms/Paragraph.jsx';
 
 function StudentList() {
   const [filterActive, setFilterActive] = useState(false);
@@ -24,7 +25,7 @@ function StudentList() {
           ))}
         </ol>
       ) : (
-        <p>За вашим запитом нікого не знайдено.</p>
+        <Paragraph text="За вашим запитом нікого не знайдено." />
       )}
     </div>
   );

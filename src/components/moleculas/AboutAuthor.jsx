@@ -1,3 +1,6 @@
+import Heading from '../atoms/Heading.jsx';
+import Paragraph from '../atoms/Paragraph.jsx';
+
 function AboutAuthor() {
   return (
     <div>

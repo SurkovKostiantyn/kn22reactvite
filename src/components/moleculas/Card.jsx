@@ -1,14 +1,11 @@
-import Heading from '../atoms/Heading';
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 import styles from './Card.module.css';
 
 function Card(props) {
-  const { title, children, buttonLabel, buttonVariant, buttonOnClick, level } =
-    props;
+  const { children, buttonLabel, buttonVariant, buttonOnClick } = props;
   return (
     <div className={styles.card}>
-      <Heading level={level} title={title} />
       {children}
       <Input type="text" placeholder="Enter your name" label="Name" />
       <Button

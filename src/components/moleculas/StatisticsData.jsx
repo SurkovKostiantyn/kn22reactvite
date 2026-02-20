@@ -1,4 +1,6 @@
 import { students } from '../../DATA/data.js';
+import Heading from '../atoms/Heading.jsx';
+import ListItem from '../atoms/ListItem.jsx';
 
 function StatisticsData() {
   const totalStudents = students.length;
@@ -8,15 +10,21 @@ function StatisticsData() {
   const maxScore = Math.max(...students.map((s) => s.score ?? 0));
   const minScore = Math.min(...students.map((s) => s.score ?? 0));
 
+  const stats = [
+    { id: 'total', name: `Всього студентів: ${totalStudents}` },
+    { id: 'active', name: `Успішних (≥60): ${activeStudents}` },
+    { id: 'avg', name: `Середній бал: ${averageScore.toFixed(1)}` },
+    { id: 'max', name: `Найвищий бал: ${maxScore}` },
+    { id: 'min', name: `Найнижчий бал: ${minScore}` },
+  ];
+
   return (
     <div>
-      <h3>Статистика</h3>
+      <Heading level={3} title="Статистика" />
       <ul>
-        <li>Всього студентів: {totalStudents}</li>
-        <li>Успішних (≥60): {activeStudents}</li>
-        <li>Середній бал: {averageScore.toFixed(1)}</li>
-        <li>Найвищий бал: {maxScore}</li>
-        <li>Найнижчий бал: {minScore}</li>
+        {stats.map((stat) => (
+          <ListItem key={stat.id} student={stat} />
+        ))}
       </ul>
     </div>
   );

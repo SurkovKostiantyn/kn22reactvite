@@ -85,9 +85,10 @@ function App() {
           {showHelp ? 'Приховати інструкцію' : 'Показати інструкцію'}
         </Button>
         {showHelp && (
-          <p className="help-text">
-            Довідка: Цей додаток дозволяє керувати списками студентів.
-          </p>
+          <Paragraph
+            className="help-text"
+            text="Довідка: Цей додаток дозволяє керувати списками студентів."
+          />
         )}
       </section>
 
@@ -97,13 +98,13 @@ function App() {
         <Heading level={2} title="Таби" />
         <div className="tab-bar">
           {tabs.map((tab) => (
-            <button
+            <Button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`tab-btn ${activeTab === tab.id ? 'active-tab' : ''}`}
             >
               {tab.label}
-            </button>
+            </Button>
           ))}
         </div>
         <div className="content">
