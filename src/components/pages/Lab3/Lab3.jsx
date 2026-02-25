@@ -5,7 +5,7 @@ import Paragraph from '../../atoms/Paragraph';
 import SearchBar from '../../moleculas/SearchBar';
 import Button from '../../atoms/Button';
 import Post from '../../moleculas/Post';
-import { mockPosts } from '../../../mockPosts';
+import { mockPosts } from '../../../DATA/mockPosts';
 
 const Lab3 = () => {
   const [searchTerm, setSearchTerm] = useState('');

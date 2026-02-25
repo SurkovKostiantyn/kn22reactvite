@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '../../atoms/Heading';
 import Post from '../../moleculas/Post';
-import { mockPosts } from '../../../mockPosts';
+import { mockPosts } from '../../../DATA/mockPosts';
 
 const Lab2 = () => {
   return (

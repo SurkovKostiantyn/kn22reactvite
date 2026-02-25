@@ -2,7 +2,7 @@
 
 > Цей репозиторій є прикладом того, як має виглядати фінальний проєкт студента після завершення курсу з React.
 
-🌐 **Demo:** [https://surkovkostiantyn.github.io/kn22reactvite/](https://surkovkostiantyn.github.io/kn22reactvite/)
+**Demo:** [https://surkovkostiantyn.github.io/kn22reactvite/](https://surkovkostiantyn.github.io/kn22reactvite/)
 
 ## Google Classroom
 

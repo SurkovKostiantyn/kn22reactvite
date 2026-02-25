@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { mockPosts } from '../../../mockPosts';
+import { mockPosts } from '../../../DATA/mockPosts';
 import Heading from '../../atoms/Heading';
 import Paragraph from '../../atoms/Paragraph';
 
