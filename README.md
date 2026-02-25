@@ -8,7 +8,7 @@
 
 [https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf](https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf)
 
-## Лабораторні роботи
+## [Лабораторні роботи](./LABS)
 
 - [Lab 1 Report](./LABS/lab1.md)
 - [Lab 2 Report](./LABS/lab2.md)
