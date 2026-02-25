@@ -3,17 +3,25 @@ import { students } from '../../DATA/data.js';
 import ListItem from '../atoms/ListItem.jsx';
 import Button from '../atoms/Button.jsx';
 import Paragraph from '../atoms/Paragraph.jsx';
+import AddStudentForm from './AddStudentForm.jsx';
 
 function StudentList() {
   const [filterActive, setFilterActive] = useState(false);
+  const [studentsList, setStudentsList] = useState(students);
 
-  const filteredStudents = students.filter(
+  const filteredStudents = studentsList.filter(
     (student) => (student.score ?? 0) >= 60
   );
-  const displayedStudents = filterActive ? filteredStudents : students;
+  const displayedStudents = filterActive ? filteredStudents : studentsList;
+
+  const handleAddStudent = (newStudent) => {
+    setStudentsList([...studentsList, newStudent]);
+  };
 
   return (
     <div>
+      <AddStudentForm onAddStudent={handleAddStudent} />
+
       <Button onClick={() => setFilterActive(!filterActive)}>
         {filterActive ? 'Показати всіх' : 'Показати тільки успішних'}
       </Button>
