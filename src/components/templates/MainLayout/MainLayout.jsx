@@ -22,7 +22,7 @@ const MainLayout = () => {
         <Outlet />
       </main>
       <footer className={styles.footer}>
-        Розроблено в рамках лабораторної роботи №4 (розширено)
+        Footer text
       </footer>
     </div>
   );
