@@ -19,6 +19,7 @@
 - [Practice 1 Report](./PRACTICE/practice1.md)
 - [Practice 2 Report](./PRACTICE/practice2.md)
 - [Practice 3 Report](./PRACTICE/practice3.md)
+- [Practice 4 Report](./PRACTICE/practice4.md)
 
 ## [Папка з інструкціями](./instructions)
 
