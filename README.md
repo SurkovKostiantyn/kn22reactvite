@@ -13,6 +13,7 @@
 - [Lab 1 Report](./LABS/lab1.md)
 - [Lab 2 Report](./LABS/lab2.md)
 - [Lab 3 Report](./LABS/lab3.md)
+- [Lab 4 Report](./LABS/lab4.md)
 
 ## [Практичні роботи](./PRACTICE)
 
