@@ -15,9 +15,11 @@ const MainLayout = () => {
       <Header />
       <nav className={styles.navbar}>
         <NavLink to="/" className={getActiveClass} end>Головна</NavLink>
+        <NavLink to="/feed" className={getActiveClass}>Стрічка</NavLink>
         <NavLink to="/lab1" className={getActiveClass}>Лабораторна 1</NavLink>
         <NavLink to="/lab2" className={getActiveClass}>Лабораторна 2</NavLink>
         <NavLink to="/lab3" className={getActiveClass}>Лабораторна 3</NavLink>
+        <NavLink to="/lab4" className={getActiveClass}>Лабораторна 4</NavLink>
         <NavLink to="/lab5" className={getActiveClass}>Лабораторна 5</NavLink>
         <NavLink to="/practice2" className={getActiveClass}>Практична 2</NavLink>
         <NavLink to="/practice3" className={getActiveClass}>Практична 3</NavLink>
