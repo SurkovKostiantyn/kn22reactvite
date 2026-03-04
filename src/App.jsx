@@ -11,6 +11,7 @@ import Lab5 from './components/pages/Lab5/Lab5';
 import Practice2 from './components/pages/Practice2/Practice2';
 import Practice3 from './components/pages/Practice3/Practice3';
 import Practice4 from './components/pages/Practice4/Practice4';
+import Practice5 from './components/pages/Practice5/Practice5';
 import NotFound from './components/pages/NotFound/NotFound';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
@@ -32,6 +33,7 @@ function App() {
         <Route path="practice2" element={<Practice2 />} />
         <Route path="practice3" element={<Practice3 />} />
         <Route path="practice4" element={<Practice4 />} />
+        <Route path="practice5" element={<Practice5 />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         
