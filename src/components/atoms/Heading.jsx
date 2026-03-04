@@ -1,8 +1,8 @@
 function Heading(props) {
-  const { level, title } = props;
+  const { level, title, children } = props;
 
   const Tag = `h${level}`;
-  return <Tag>{title}</Tag>;
+  return <Tag>{children || title}</Tag>;
 }
 
 export default Heading;

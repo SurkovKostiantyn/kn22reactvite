@@ -1,9 +1,9 @@
 function Paragraph(props) {
-  const { text, style, className } = props;
+  const { text, style, className, children } = props;
 
   return (
     <p style={style} className={className}>
-      {text}
+      {children || text}
     </p>
   );
 }
