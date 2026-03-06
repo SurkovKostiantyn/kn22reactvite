@@ -12,6 +12,8 @@ import Practice2 from './components/pages/Practice2/Practice2';
 import Practice3 from './components/pages/Practice3/Practice3';
 import Practice4 from './components/pages/Practice4/Practice4';
 import Practice5 from './components/pages/Practice5/Practice5';
+import Lab6 from './components/pages/Lab6/Lab6';
+import CocktailDetail from './components/pages/Lab6/CocktailDetail';
 import NotFound from './components/pages/NotFound/NotFound';
 import Login from './components/pages/Login/Login';
 import Register from './components/pages/Register/Register';
@@ -30,6 +32,8 @@ function App() {
         <Route path="lab3/:postId" element={<Lab3Post />} />
         <Route path="lab4" element={<Lab4 />} />
         <Route path="lab5" element={<Lab5 />} />
+        <Route path="lab6" element={<Lab6 />} />
+        <Route path="lab6/:id" element={<CocktailDetail />} />
         <Route path="practice2" element={<Practice2 />} />
         <Route path="practice3" element={<Practice3 />} />
         <Route path="practice4" element={<Practice4 />} />

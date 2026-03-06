@@ -21,6 +21,7 @@ const MainLayout = () => {
         <NavLink to="/lab3" className={getActiveClass}>Лабораторна 3</NavLink>
         <NavLink to="/lab4" className={getActiveClass}>Лабораторна 4</NavLink>
         <NavLink to="/lab5" className={getActiveClass}>Лабораторна 5</NavLink>
+        <NavLink to="/lab6" className={getActiveClass}>Лабораторна 6</NavLink>
         <NavLink to="/practice2" className={getActiveClass}>Практична 2</NavLink>
         <NavLink to="/practice3" className={getActiveClass}>Практична 3</NavLink>
         <NavLink to="/practice4" className={getActiveClass}>Практична 4</NavLink>

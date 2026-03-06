@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Heading from '../../atoms/Heading';
 import Paragraph from '../../atoms/Paragraph';
-import syllabusText from '../../../../Syllabus.md?raw';
+import syllabusText from '../../../../README.md?raw';
 
 const Home = () => {
   return (

@@ -8,6 +8,10 @@
 
 [https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf](https://classroom.google.com/c/ODQ0MjAxNTI3NzM3?cjc=wxn3lepf)
 
+## НМК:
+
+[https://surkovkostiantyn.github.io/nmk/](https://surkovkostiantyn.github.io/nmk/)
+
 ## [Лабораторні роботи](./LABS)
 
 - [Lab 1 Report](./LABS/lab_01.md)
@@ -15,6 +19,7 @@
 - [Lab 3 Report](./LABS/lab_03.md)
 - [Lab 4 Report](./LABS/lab_04.md)
 - [Lab 5 Report](./LABS/lab_05.md)
+- [Lab 6 Report](./LABS/lab_06.md)
 
 ## [Практичні роботи](./PRACTICE)
 
