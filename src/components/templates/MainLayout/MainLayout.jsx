@@ -26,6 +26,7 @@ const MainLayout = () => {
         <NavLink to="/practice3" className={getActiveClass}>Практична 3</NavLink>
         <NavLink to="/practice4" className={getActiveClass}>Практична 4</NavLink>
         <NavLink to="/practice5" className={getActiveClass}>Практична 5</NavLink>
+        <NavLink to="/practice6" className={getActiveClass}>Практична 6</NavLink>
         {isAuthenticated ? (
           <NavLink to="/profile" className={getActiveClass}>Особистий кабінет</NavLink>
         ) : (
