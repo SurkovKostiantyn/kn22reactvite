@@ -24,6 +24,8 @@ function Post({ id, title, content, author, category }) {
 
       <div className={styles.actions}>
         {/* Використання атома Button з відображенням стану */}
+        {/* Навмисна помилка (Bug): нескінченний цикл рендерингу! */}
+        {/* функція викликається ОДРАЗУ під час рендеру, змінює стан, що викликає новий рендер і так по колу */}
         <Button onClick={handleLike}>Like ({likes})</Button>
       </div>
     </div>

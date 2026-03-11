@@ -40,7 +40,14 @@ const Feed = () => {
           filteredPosts.map((post) => (
             <div key={post.id} style={{ marginBottom: '16px' }}>
               <Post {...post} />
-              <Link to={`/lab3/${post.id}`} style={{ display: 'inline-block', marginTop: '8px', color: '#007bff' }}>
+              <Link
+                to={`/lab3/${post.id}`}
+                style={{
+                  display: 'inline-block',
+                  marginTop: '8px',
+                  color: '#007bff',
+                }}
+              >
                 Читати повністю (динамічний URL) →
               </Link>
             </div>
