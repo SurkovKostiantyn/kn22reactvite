@@ -13,6 +13,9 @@ import Practice3 from './components/pages/Practice3/Practice3';
 import Practice4 from './components/pages/Practice4/Practice4';
 import Practice5 from './components/pages/Practice5/Practice5';
 import Practice6 from './components/pages/Practice6/Practice6';
+import Practice7 from './components/pages/Practice7/Practice7';
+import NewsFeedP7 from './components/pages/Practice7/NewsFeed';
+import PostDetailsP7 from './components/pages/Practice7/PostDetails';
 import Lab6 from './components/pages/Lab6/Lab6';
 import CocktailDetail from './components/pages/Lab6/CocktailDetail';
 import NotFound from './components/pages/NotFound/NotFound';
@@ -40,6 +43,10 @@ function App() {
         <Route path="practice4" element={<Practice4 />} />
         <Route path="practice5" element={<Practice5 />} />
         <Route path="practice6" element={<Practice6 />} />
+        <Route path="practice7" element={<Practice7 />}>
+          <Route index element={<NewsFeedP7 />} />
+          <Route path="post/:postId" element={<PostDetailsP7 />} />
+        </Route>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         
