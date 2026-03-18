@@ -3,6 +3,8 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthContext';
 import Header from '../../organisms/Header';
 import styles from './MainLayout.module.css';
+import Button from '../../atoms/Button';
+import useThemeContext from '../../../hooks/useThemeContext';
 
 const MainLayout = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -10,8 +12,20 @@ const MainLayout = () => {
   const getActiveClass = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.active}` : styles.link;
 
+  const [theme, setTheme] = useThemeContext();
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  const themeIcon = theme === 'light' ? '☀️' : '🌙';
+
+  const themeButtonText = `${themeIcon} ${theme === 'light' ? 'Світла тема' : 'Темна тема'}`;
+
+  const themeButton = <Button onClick={toggleTheme}>{themeButtonText}</Button>;
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-theme={theme}>
       <Header />
       <nav className={styles.navbar}>
         <NavLink to="/" className={getActiveClass} end>
@@ -56,6 +70,9 @@ const MainLayout = () => {
         <NavLink to="/practice7" className={getActiveClass}>
           Практична 7
         </NavLink>
+        <NavLink to="/practice8" className={getActiveClass}>
+          Практична 8
+        </NavLink>
         {isAuthenticated ? (
           <NavLink to="/profile" className={getActiveClass}>
             Особистий кабінет
@@ -70,6 +87,9 @@ const MainLayout = () => {
             </NavLink>
           </>
         )}
+
+        {/* Кнопка для перемикання теми */}
+        {themeButton}
       </nav>
       <main className={styles.mainContent}>
         <Outlet />

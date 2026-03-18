@@ -6,6 +6,28 @@
   box-sizing: border-box;
 }
 
+:root[data-theme='light'] {
+  --bg-color: #f0f2f5;
+  --text-color: #1a1a2e;
+  --section-bg: #ffffff;
+  --section-border: #e8e8ef;
+  --section-title-color: #4a4a6a;
+  --section-title-border: #f0f0f8;
+  --paragraph-color: #555555;
+  --help-text-bg: #f8f9ff;
+}
+
+:root[data-theme='dark'] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --section-bg: #1e1e1e;
+  --section-border: #333333;
+  --section-title-color: #b0b0b0;
+  --section-title-border: #2d2d2d;
+  --paragraph-color: #cccccc;
+  --help-text-bg: #2d2d2d;
+}
+
 body {
   font-family:
     'Inter',
@@ -14,10 +36,11 @@ body {
     'Segoe UI',
     Roboto,
     sans-serif;
-  background-color: #f0f2f5;
-  color: #1a1a2e;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -44,13 +67,13 @@ header h1 {
 
 /* ===== Section Cards ===== */
 .section {
-  background: #ffffff;
+  background: var(--section-bg);
   border-radius: 12px;
   padding: 24px 28px;
   margin-bottom: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e8e8ef;
-  transition: box-shadow 0.3s ease;
+  border: 1px solid var(--section-border);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .section:hover {
@@ -60,10 +83,10 @@ header h1 {
 .section h2 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #4a4a6a;
+  color: var(--section-title-color);
   margin-bottom: 16px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #f0f0f8;
+  border-bottom: 2px solid var(--section-title-border);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -150,18 +173,18 @@ li:last-child {
 
 /* ===== Paragraphs inside sections ===== */
 .section p {
-  color: #555;
+  color: var(--paragraph-color);
   margin: 8px 0;
 }
 
 /* ===== Help text ===== */
 .help-text {
-  background-color: #f8f9ff;
+  background-color: var(--help-text-bg);
   border-left: 3px solid #667eea;
   padding: 12px 16px;
   margin-top: 12px;
   border-radius: 0 8px 8px 0;
-  color: #4a4a6a;
+  color: var(--text-color);
 }
 
 /* ===== Stats ===== */

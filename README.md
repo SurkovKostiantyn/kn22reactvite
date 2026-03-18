@@ -30,6 +30,7 @@
 - [Practice 5 Report](./PRACTICE/practice_05.md)
 - [Practice 6 Report](./PRACTICE/practice_06.md)
 - [Practice 7 Report](./PRACTICE/practice_07.md)
+- [Practice 8 Report](./PRACTICE/practice_08.md)
 
 ## [Папка з інструкціями](./instructions)
 

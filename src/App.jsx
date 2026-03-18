@@ -1,3 +1,4 @@
+import useOnlineStatus from './hooks/useOnlineStatus';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './components/templates/MainLayout/MainLayout';
 import Home from './components/pages/Home/Home';
@@ -16,6 +17,7 @@ import Practice6 from './components/pages/Practice6/Practice6';
 import Practice7 from './components/pages/Practice7/Practice7';
 import NewsFeedP7 from './components/pages/Practice7/NewsFeed';
 import PostDetailsP7 from './components/pages/Practice7/PostDetails';
+import Practice8 from './components/pages/Practice8/Practice8';
 import Lab6 from './components/pages/Lab6/Lab6';
 import CocktailDetail from './components/pages/Lab6/CocktailDetail';
 import NotFound from './components/pages/NotFound/NotFound';
@@ -25,39 +27,54 @@ import Profile from './components/pages/Profile/Profile';
 import ProtectedRoute from './components/hoc/ProtectedRoute';
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="feed" element={<Feed />} />
-        <Route path="lab1" element={<Lab1 />} />
-        <Route path="lab2" element={<Lab2 />} />
-        <Route path="lab3" element={<Lab3 />} />
-        <Route path="lab3/:postId" element={<Lab3Post />} />
-        <Route path="lab4" element={<Lab4 />} />
-        <Route path="lab5" element={<Lab5 />} />
-        <Route path="lab6" element={<Lab6 />} />
-        <Route path="lab6/:id" element={<CocktailDetail />} />
-        <Route path="practice2" element={<Practice2 />} />
-        <Route path="practice3" element={<Practice3 />} />
-        <Route path="practice4" element={<Practice4 />} />
-        <Route path="practice5" element={<Practice5 />} />
-        <Route path="practice6" element={<Practice6 />} />
-        <Route path="practice7" element={<Practice7 />}>
-          <Route index element={<NewsFeedP7 />} />
-          <Route path="post/:postId" element={<PostDetailsP7 />} />
-        </Route>
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        
-        {/* Захищений маршрут */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="profile/*" element={<Profile />} />
-        </Route>
+  const { isOnline, type } = useOnlineStatus();
 
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+  return (
+    <>
+      {/* Виводимо статус з'єднання */}
+      <div>
+        <p>Статус: {isOnline ? '🟢 Online' : '🔴 Offline'}</p>
+        {isOnline && (
+          <p>
+            Швидкість з'єднання: <strong>{type}</strong>
+          </p>
+        )}
+      </div>
+
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="feed" element={<Feed />} />
+          <Route path="lab1" element={<Lab1 />} />
+          <Route path="lab2" element={<Lab2 />} />
+          <Route path="lab3" element={<Lab3 />} />
+          <Route path="lab3/:postId" element={<Lab3Post />} />
+          <Route path="lab4" element={<Lab4 />} />
+          <Route path="lab5" element={<Lab5 />} />
+          <Route path="lab6" element={<Lab6 />} />
+          <Route path="lab6/:id" element={<CocktailDetail />} />
+          <Route path="practice2" element={<Practice2 />} />
+          <Route path="practice3" element={<Practice3 />} />
+          <Route path="practice4" element={<Practice4 />} />
+          <Route path="practice5" element={<Practice5 />} />
+          <Route path="practice6" element={<Practice6 />} />
+          <Route path="practice7" element={<Practice7 />}>
+            <Route index element={<NewsFeedP7 />} />
+            <Route path="post/:postId" element={<PostDetailsP7 />} />
+          </Route>
+          <Route path="practice8" element={<Practice8 />}></Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+
+          {/* Захищений маршрут */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="profile/*" element={<Profile />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
