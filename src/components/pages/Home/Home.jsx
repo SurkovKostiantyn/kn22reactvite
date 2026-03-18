@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Heading from '../../atoms/Heading';
 import Paragraph from '../../atoms/Paragraph';
