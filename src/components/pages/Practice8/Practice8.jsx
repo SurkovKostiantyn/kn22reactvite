@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Heading from '../../atoms/Heading';
 import ProductContainer from '../../organisms/ProductContainer/ProductContainer';
 import useWindowSize from '../../../hooks/useWindowSize';
+import Paragraph from '../../atoms/Paragraph';
 
 // Імітація даних, що прийшли з бекенду
 const productsInfo = [
@@ -102,9 +103,10 @@ const Practice8 = () => {
       <div className="help-text">
         <Heading level={3}>Мета роботи</Heading>
         <Paragraph>
-          На цій практичній роботі ми вивчаємо <strong>абстракцію бізнес-логіки</strong>.
-          Ми виносимо повторюваний функціонал у власні кастомні хуки, що дозволяє
-          зробити код компонентів чистішим та легшим для підтримки.
+          На цій практичній роботі ми вивчаємо{' '}
+          <strong>абстракцію бізнес-логіки</strong>. Ми виносимо повторюваний
+          функціонал у власні кастомні хуки, що дозволяє зробити код компонентів
+          чистішим та легшим для підтримки.
         </Paragraph>
       </div>
 
@@ -114,21 +116,26 @@ const Practice8 = () => {
           <li>
             <strong>useWindowSize</strong> — відстежує розмір вікна браузера.
             <br />
-            <small>Поточна ширина: {width}px. Режим: {isMobile ? 'Мобільний' : 'Десктопний'}</small>
+            <small>
+              Поточна ширина: {width}px. Режим:{' '}
+              {isMobile ? 'Мобільний' : 'Десктопний'}
+            </small>
           </li>
           <li>
-            <strong>useOnlineStatus</strong> — моніторить стан мережі (онлайн/офлайн) та тип з'єднання.
+            <strong>useOnlineStatus</strong> — моніторить стан мережі
+            (онлайн/офлайн) та тип з'єднання.
           </li>
           <li>
-            <strong>useThemeContext</strong> — керує темою додатка (світла/темна) та зберігає вибір у LocalStorage.
+            <strong>useThemeContext</strong> — керує темою додатка
+            (світла/темна) та зберігає вибір у LocalStorage.
           </li>
         </ul>
       </div>
 
       <Heading level={3}>Каталог товарів</Heading>
       <Paragraph>
-        Нижче наведено приклад використання стану, що передається у спільний смарт-компонент
-        продукту.
+        Нижче наведено приклад використання стану, що передається у спільний
+        смарт-компонент продукту.
       </Paragraph>
 
       <div
